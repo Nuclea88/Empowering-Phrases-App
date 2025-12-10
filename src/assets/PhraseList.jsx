@@ -1,6 +1,9 @@
+import React from 'react';
+import PhraseCard from './PhraseCard';
+
 const PhraseList = ({ phrases }) => {
   return (
-    <div className="phrase-list">
+    <div>
       {phrases.map((phrase, index) => (
         <PhraseCard 
           key={index} 
