@@ -1,40 +1,44 @@
-import React, { useState } from 'react'
-import './App.css'
-
+import React, { useState, useEffect } from 'react';
+import './App.css';
+import { phrasesArray } from './data/phrasesArray';
+import { idGenerator } from './utils/idGenerator';
+import AppLayout from './components/templates/AppLayout';
+import PhraseForm from './components/organisms/PhraseForm';
+import PhraseList from './components/organisms/PhraseList';
 function App() {
   const [phrases, setPhrases] = useState(() => {
     const saved = localStorage.getItem('phrases');
-    return saved ? JSON.parse(saved) : initialPhrases;
+    return saved ? JSON.parse(saved) : phrasesArray;
   });
-
   useEffect(() => {
     localStorage.setItem('phrases', JSON.stringify(phrases));
   }, [phrases]);
-
+  // LÓGICA CRUD IMPLEMENTADA DENTRO DE APP.JSX (P2)
   const addPhrase = (newPhrase) => {
     const phrase = {
       id: idGenerator(phrases),
-      phrase: newPhrase.phrase,
+      text: newPhrase.text, // Asumiendo que el campo es 'text' en lugar de 'phrase'
       author: newPhrase.author || 'Anónimo',
       image: newPhrase.image || ''
     };
     setPhrases([phrase, ...phrases]);
   };
-
-  const updatePhrase = (id, updated) => {
+  const handleUpdatePhrase = (id, updated) => { // Renombrado para evitar conflicto de nombres
     setPhrases(phrases.map((p) => (p.id === id ? { ...p, ...updated } : p)));
   };
-
-  const deletePhrase = (id) => {
+  const handleDeletePhrase = (id) => { // Renombrado para evitar conflicto de nombres
     setPhrases(phrases.filter((p) => p.id !== id));
   };
-
   return (
     <AppLayout>
-      <PhraseForm onAdd={addPhrase} />
-      <PhraseList phrases={phrases} onUpdate={updatePhrase} onDelete={deletePhrase} />
+      {/* :rotating_light: CONEXIÓN DE PROPS: Usar las funciones internas */}
+      <PhraseForm onSubmit={addPhrase} />
+      <PhraseList
+        phrases={phrases}
+        onUpdate={handleUpdatePhrase}
+        onDelete={handleDeletePhrase}
+      />
     </AppLayout>
   );
 }
-
 export default App;
