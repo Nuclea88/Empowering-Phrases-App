@@ -1,10 +1,10 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 import AppLayout from './AppLayout';
-import { initialPhrases } from './phrasesarray';
-import { idGenerator } from './idGenerator';
-import PhraseList from './components/PhraseList';
-import PhraseForm from './components/PhraseForm';
+import { initialPhrases } from './data/phrasesArray';
+import { idGenerator } from './utils/idGenerator';
+import PhraseList from './components/organisms/PhraseList';
+import PhraseForm from './components/molecules/PhraseForm';
 
 function App() {
   const [phrases, setPhrases] = useState(() => {
@@ -27,11 +27,7 @@ function App() {
   };
 
   const updatePhrase = (id, updated) => {
-    setPhrases(
-      phrases.map((p) =>
-        p.id === id ? { ...p, ...updated } : p
-      )
-    );
+    setPhrases(phrases.map((p) => (p.id === id ? { ...p, ...updated } : p)));
   };
 
   const deletePhrase = (id) => {
@@ -41,11 +37,7 @@ function App() {
   return (
     <AppLayout>
       <PhraseForm onAdd={addPhrase} />
-      <PhraseList
-        phrases={phrases}
-        onUpdate={updatePhrase}
-        onDelete={deletePhrase}
-      />
+      <PhraseList phrases={phrases} onUpdate={updatePhrase} onDelete={deletePhrase} />
     </AppLayout>
   );
 }
