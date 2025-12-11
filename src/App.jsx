@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     localStorage.setItem('phrases', JSON.stringify(phrases));
   }, [phrases]);
-  // LÓGICA CRUD IMPLEMENTADA DENTRO DE APP.JSX (P2)
+  
   const addPhrase = (newPhrase) => {
     const phrase = {
       id: idGenerator(phrases),
