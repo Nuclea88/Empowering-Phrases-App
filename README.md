@@ -1,16 +1,62 @@
-# React + Vite
+# 🌟 Empowering Phrases App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 📋 Sobre el Proyecto
+**Empowering Phrases App** es una aplicación web ficticia desarrollada como proyecto en el bootcamp FemCoders.  
+Simula un encargo real de un cliente que necesitaba una herramienta para **gestionar frases motivacionales** de manera sencilla, con funcionalidades de **crear, leer, editar y eliminar (CRUD)**.
 
-Currently, two official plugins are available:
+El proyecto fue desarrollado por un equipo de 4 programadoras junior utilizando **React.js, Tailwind CSS, HTML, CSS y JavaScript**, aplicando arquitectura por componentes y diseño responsive.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🎯 Objetivos del Proyecto
+- Crear una aplicación funcional desde cero con **React.js**.  
+- Implementar un CRUD completo para frases y autores.  
+- Diseñar una experiencia de usuario fluida y adaptable a cualquier dispositivo.  
+- Aplicar principios de **Atomic Design** en la interfaz.  
+- Trabajar en equipo usando **Git y GitHub**.  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## ✨ Características Principales
+📝 **Gestión de frases**: Crear, editar, eliminar y visualizar frases con su autor.  
+📱 **Responsive design**: Interfaz adaptable a móvil, tablet y escritorio.  
+🎨 **Estilos con Tailwind CSS**: Diseño moderno y consistente.  
+⭐ **Bonus**: Posibilidad de añadir imágenes a las frases.  
+💾 **Bonus**: Persistencia de datos en **localStorage**.  
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🛠️ Tecnologías Utilizadas
+| Tecnología     | Uso |
+|----------------|---------------------------------------------|
+| HTML5          | Estructura y semántica |
+| CSS3           | Estilos básicos |
+| JavaScript ES6+| Lógica y funcionalidades |
+| React.js       | Librería principal para la interfaz |
+| Tailwind CSS   | Framework de estilos |
+| Git & GitHub   | Control de versiones y colaboración |
+| Figma          | Diseño y prototipado |
+| Trello         | Planificación y gestión de tareas |
+
+---
+
+## 📁 Estructura del Proyecto
+Empowering-Phrases-App/ 
+│ 
+├── public/ → Archivos públicos y estáticos 
+│ 
+├── src/ → Código fuente principal 
+│ 
+├── components/ → Componentes reutilizables (Atomic Design) 
+│ 
+├── hooks/ → Custom hooks de React 
+│ 
+├── pages/ → Páginas principales de la aplicación 
+│ 
+├── styles/ → Archivos de estilos (Tailwind config) 
+│ 
+└── App.js → Componente raíz 
+│ 
+├── package.json → Dependencias y scripts 
+├── README.md → Documentación del proyecto 
+└── tailwind.config.js → Configuración de Tailwind CSS

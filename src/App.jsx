@@ -1,9 +1,14 @@
-const [phrases, setPhrases] = useState([]);
+import { useState } from 'react'
+import './App.css'
 
-<AppLayout>
-  <PhraseList 
-    phrases={phrases} 
-    onUpdate={handleUpdate} 
-    onDelete={handleDelete} 
-  />
-</AppLayout>
+function App() {
+  const [phrases, setPhrases] = useState(initialPhrases);
+
+  return (
+   <>
+   </> 
+  );
+}
+  
+
+export default App
