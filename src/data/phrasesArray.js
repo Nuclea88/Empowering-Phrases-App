@@ -1,4 +1,4 @@
-const initialPhrases = [
+const phrasesArray = [
     { 
         id: 1, 
         phrase: "El coraje no es la ausencia de miedo, sino el triunfo sobre él.", 
@@ -18,4 +18,4 @@ const initialPhrases = [
         image: 'https://www.freepik.es/fotos-vectores-gratis/tiempo-metafora'
     }
 ];
-export {initialPhrases};
+export {phrasesArray};
