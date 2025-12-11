@@ -1,20 +1,14 @@
-import { useState } from 'react';
-import AppLayout from './AppLayout';
-import PhraseList from './PhraseList';
+import { useState } from 'react'
+import './App.css'
 
 function App() {
-  const [phrases, setPhrases] = useState([
-    { text: "Life is beautiful", author: "Anonymus" },
-    { text: "Knowledge is power", author: "Francis Bacon" }
-  ]);
+  const [phrases, setPhrases] = useState(initialPhrases);
 
   return (
-    <AppLayout>
-      <PhraseList phrases={phrases} />
-    </AppLayout>
+   <>
+   </> 
   );
 }
+  
 
-export default App;
-
-
+export default App
