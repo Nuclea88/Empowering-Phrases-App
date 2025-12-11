@@ -6,6 +6,7 @@ const idGenerator = (phrases) =>{
         const currentId = Number(phrase.id); 
         return currentId > max ? currentId : max;
     }, 0);
+    
     return maxId + 1;
 }
 export {idGenerator};
