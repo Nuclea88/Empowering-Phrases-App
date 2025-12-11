@@ -1,10 +1,5 @@
-import { useState, useEffect } from 'react';
-import './App.css';
-import AppLayout from './AppLayout';
-import { initialPhrases } from './data/phrasesArray';
-import { idGenerator } from './utils/idGenerator';
-import PhraseList from './components/organisms/PhraseList';
-import PhraseForm from './components/molecules/PhraseForm';
+import React, { useState } from 'react'
+import './App.css'
 
 function App() {
   const [phrases, setPhrases] = useState(() => {
