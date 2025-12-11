@@ -13,7 +13,7 @@ const Button = ({ children, onClick, type = 'button', className = '' }) => {
             type={type}
             onClick={onClick}
             className={allClasses}>
-            {children} {/* El contenido del botón (ej. el texto "Añadir") */}
+            {children} {/* El contenido del botón */}
         </button>
     );
 };
