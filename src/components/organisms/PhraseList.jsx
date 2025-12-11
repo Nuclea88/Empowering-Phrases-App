@@ -3,7 +3,7 @@ import PhraseCard from '../molecules/PhraseCard';
 
 const PhraseList = ({ phrases, onUpdate, onDelete }) => {
   if (!phrases.length) {
-    return <p className="text-center text-gray-600">No hay frases todavía.</p>;
+    return <p className="text-center text-gray-600">There are no phrases yet.</p>;
   }
 
   return (
