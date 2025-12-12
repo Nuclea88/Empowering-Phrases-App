@@ -18,4 +18,4 @@ const phrasesArray = [
         image: 'https://www.freepik.es/fotos-vectores-gratis/tiempo-metafora'
     }
 ];
-export {phrasesArray};
+export default phrasesArray;
