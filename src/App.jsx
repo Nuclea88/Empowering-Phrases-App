@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import { phrasesArray } from './data/phrasesArray';
+import phrasesArray from './data/PhrasesArray';
 import { idGenerator } from './utils/idGenerator';
 import AppLayout from './components/templates/AppLayout';
 import PhraseForm from './components/organisms/PhraseForm';
