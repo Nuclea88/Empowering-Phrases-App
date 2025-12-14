@@ -7,7 +7,7 @@ import Input from '../atoms/Input';
 import Button from '../atoms/Button';
 
 // Este componente Organism maneja el estado local para el formulario de adición de frases.
-const PhraseForm = ({ onAdd }) => {
+const PhraseForm = ({ onSubmit }) => {
   // Estado local para capturar los valores de los inputs (phrase, author, image)
   const [phrase, setPhrase] = useState('');
   const [author, setAuthor] = useState('');
@@ -20,7 +20,7 @@ const PhraseForm = ({ onAdd }) => {
     if (!phrase.trim()) return;
 
     // Envía los datos al componente padre (App.jsx) a través del prop 'onAdd'
-    onAdd({ text: phrase, author, image }); 
+    onSubmit({ text: phrase, author, image }); 
 
     // Resetea el formulario después del envío exitoso
     setPhrase('');
