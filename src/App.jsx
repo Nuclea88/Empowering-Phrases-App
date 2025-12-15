@@ -6,6 +6,7 @@ import AppLayout from './components/templates/AppLayout';
 import PhraseForm from './components/organisms/PhraseForm';
 import PhraseList from './components/organisms/PhraseList';
 import deletePhrase from './utils/DeletePhrase';
+import updatePhrase from './utils/UpdatePhrase';
 function App() {
   const [phrases, setPhrases] = useState(() => {
     const saved = localStorage.getItem('phrases');
@@ -24,8 +25,9 @@ function App() {
     };
     setPhrases([phrase, ...phrases]);
   };
-  const handleUpdatePhrase = (id, updated) => { // Renombrado para evitar conflicto de nombres
-    setPhrases(phrases.map((p) => (p.id === id ? { ...p, ...updated } : p)));
+  const handleUpdatePhrase = (updated) => {
+    const newPhrases = updatePhrase(updated, phrases);
+    setPhrases(newPhrases);
   };
   const handleDeletePhrase = (id) => {
     const newPhrases = deletePhrase(id, phrases);
