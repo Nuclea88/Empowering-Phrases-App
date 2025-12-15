@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import phrasesArray from './data/PhrasesArray';
-import { idGenerator } from './utils/idGenerator';
 import AppLayout from './components/templates/AppLayout';
 import PhraseForm from './components/organisms/PhraseForm';
 import PhraseList from './components/organisms/PhraseList';
 import deletePhrase from './utils/DeletePhrase';
 import updatePhrase from './utils/UpdatePhrase';
+import createPhrase from './utils/CreatePhrase';
 function App() {
   const [phrases, setPhrases] = useState(() => {
     const saved = localStorage.getItem('phrases');
@@ -16,14 +16,9 @@ function App() {
     localStorage.setItem('phrases', JSON.stringify(phrases));
   }, [phrases]);
   
-  const addPhrase = (newPhrase) => {
-    const phrase = {
-      id: idGenerator(phrases),
-      text: newPhrase.text, // Asumiendo que el campo es 'text' en lugar de 'phrase'
-      author: newPhrase.author || 'Anónimo',
-      image: newPhrase.image || ''
-    };
-    setPhrases([phrase, ...phrases]);
+  const handleAddPhrase = (newPhrase) => {
+    const newPhrases = createPhrase(newPhrase, phrases);
+    setPhrases(newPhrases);
   };
   const handleUpdatePhrase = (updated) => {
     const newPhrases = updatePhrase(updated, phrases);
@@ -36,7 +31,7 @@ function App() {
   return (
     <AppLayout>
       {/* :rotating_light: CONEXIÓN DE PROPS: Usar las funciones internas */}
-      <PhraseForm onSubmit={addPhrase} />
+      <PhraseForm onSubmit={handleAddPhrase} />
       <PhraseList
         phrases={phrases}
         onUpdate={handleUpdatePhrase}
