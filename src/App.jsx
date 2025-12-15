@@ -5,6 +5,7 @@ import { idGenerator } from './utils/idGenerator';
 import AppLayout from './components/templates/AppLayout';
 import PhraseForm from './components/organisms/PhraseForm';
 import PhraseList from './components/organisms/PhraseList';
+
 function App() {
   const [phrases, setPhrases] = useState(() => {
     const saved = localStorage.getItem('phrases');
@@ -17,7 +18,7 @@ function App() {
   const addPhrase = (newPhrase) => {
     const phrase = {
       id: idGenerator(phrases),
-      text: newPhrase.text, // Asumiendo que el campo es 'text' en lugar de 'phrase'
+      phrase: newPhrase.text, // Asumiendo que el campo es 'text' en lugar de 'phrase'
       author: newPhrase.author || 'Anónimo',
       image: newPhrase.image || ''
     };
@@ -29,6 +30,7 @@ function App() {
   const handleDeletePhrase = (id) => { // Renombrado para evitar conflicto de nombres
     setPhrases(phrases.filter((p) => p.id !== id));
   };
+  
   return (
     <AppLayout>
       {/* :rotating_light: CONEXIÓN DE PROPS: Usar las funciones internas */}
@@ -37,6 +39,7 @@ function App() {
         phrases={phrases}
         onUpdate={handleUpdatePhrase}
         onDelete={handleDeletePhrase}
+
       />
     </AppLayout>
   );

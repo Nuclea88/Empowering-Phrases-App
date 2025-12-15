@@ -1,43 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Button from '../atoms/Button';
 
 const PhraseCard = ({ phrase, onEditClick, onDeleteClick }) => {
-  const displayAuthor = phrase.author && phrase.author.trim() !== ''
-    ? phrase.author
-    : 'Anónimo';
+  const [isEditing, setIsEditing] = useState(false);
+  const [editedPhrase, setEditedPhrase] = useState(phrase.phrase);
+  const [editedAuthor, setEditedAuthor] = useState(phrase.author);
+
+  const handleSave = () => {
+    onEditClick({
+      phrase: editedPhrase,
+      author: editedAuthor,
+    });
+    setIsEditing(false);
+  };
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md mb-4 border border-gray-100">
-      {phrase.image && (
-        <img
-          src={phrase.image}
-          alt={phrase.phrase}
-          className="w-full h-40 object-cover mb-2 rounded"
-        />
+    <div className="bg-white p-4 rounded shadow">
+      {isEditing ? (
+        <>
+          <textarea
+            value={editedPhrase}
+            onChange={(e) => setEditedPhrase(e.target.value)}
+            className="w-full border p-2 mb-2"
+          />
+          <input
+            value={editedAuthor}
+            onChange={(e) => setEditedAuthor(e.target.value)}
+            className="w-full border p-2 mb-2"
+          />
+          <Button onClick={handleSave} className="bg-green-500 text-white">
+            Save
+          </Button>
+        </>
+      ) : (
+        <>
+          <p className="text-lg font-semibold">{phrase.phrase}</p>
+          <p className="text-sm text-gray-600">— {phrase.author}</p>
+          <div className="flex gap-2 mt-2">
+            <Button onClick={() => setIsEditing(true)} className="bg-blue-500 text-white">
+              Edit
+            </Button>
+            <Button onClick={() => onDeleteClick(phrase.id)} className="bg-red-500 text-white">
+              Delete
+            </Button>
+          </div>
+        </>
       )}
-
-      <blockquote className="text-xl italic text-gray-800 mb-4">
-        "{phrase.phrase}"
-      </blockquote>
-
-      <footer className="text-right">
-        <cite className="block text-sm text-[#7F8C8D] font-semibold not-italic">
-          — {displayAuthor}
-        </cite>
-      </footer>
-
-      <div className="flex justify-end space-x-2 mt-4 pt-3 border-t border-gray-100">
-        <Button
-          onClick={() => onDeleteClick(phrase.id)}
-          className="bg-transparent text-[#E74C3C] hover:bg-red-50">
-          Eliminar
-        </Button>
-        <Button
-          onClick={() => onEditClick(phrase)}
-          className="bg-[#007BFF] text-white hover:bg-[#0056b3]">
-          Editar
-        </Button>
-      </div>
     </div>
   );
 };
