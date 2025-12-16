@@ -1,89 +1,96 @@
 // src/components/organisms/PhraseForm.jsx
 
 // Importar los hooks de React necesarios
-import React, { useState } from 'react';
+import React, { useState} from 'react';
 // Importar los átomos de la carpeta components
 import Input from '../atoms/Input';
 import Button from '../atoms/Button';
 
-// Este componente Organism maneja el estado local para el formulario de adición de frases.
-const PhraseForm = ({ onAdd }) => {
-  // Estado local para capturar los valores de los inputs (phrase, author, image)
-  const [phrase, setPhrase] = useState('');
-  const [author, setAuthor] = useState('');
-  const [image, setImage] = useState('');
+const PhraseForm = ({ initialData, onSubmit, onCancel}) => {
+  const defaultState = {id: null, phrase: '', author:'', image: ''};
+  const [formData, setFormData] = useState(initialData || defaultState);
 
-  // Manejador del envío del formulario
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Validación simple: la frase no puede estar vacía
-    if (!phrase.trim()) return;
-
-    // Envía los datos al componente padre (App.jsx) a través del prop 'onAdd'
-    onAdd({ text: phrase, author, image }); 
-
-    // Resetea el formulario después del envío exitoso
-    setPhrase('');
-    setAuthor('');
-    setImage('');
+  //para la parte de actualizacion pero, como pilla la id?
+  const handleChange = (event) => {
+    const { id, value } = event.target;
+    setFormData(prevData => ({
+      ...prevData,
+      [id]: value
+    }));
   };
+  // Manejador del envío del formulario
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    onSubmit(formData); 
+    if (!initialData) {
+      setFormData(defaultState);
+    }
+  };
+  const isUpdating = !!initialData;
+  const title = isUpdating ? 'Update Phrase' : 'Add New Phrase';
+  const buttonText = isUpdating ? 'Save Changes' : 'Add Phrase';
+  const buttonColor = isUpdating 
+    ? 'bg-[#3498db] text-white hover:bg-[#2980b9]' // Azul para actualizar
+    : 'bg-[#2ECC71] text-white hover:bg-[#27ae60]'; // Verde para añadir
 
   return (
-    // Aplicar estilos de tarjeta (card) al formulario (fondo blanco, sombra)
     <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md space-y-4 mb-6">
-      <h2 className="text-xl font-semibold mb-2">Add New Phrase</h2>
+      <h2 className="text-xl font-semibold mb-2">{title}</h2>
       <div>
 
-        <label htmlFor="input-phrase" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="phrase" className="block text-sm font-medium text-gray-700 mb-1">
           Empowerment Phrase
         </label>
         <Input
-          id="input-phrase"
-          value={phrase}
-          onChange={(e) => setPhrase(e.target.value)}
-          // PLACEHOLDER
+          id="phrase"
+          value={formData.phrase}
+          onChange= {handleChange}
           placeholder="Write a phrase here..."
           required
-          // Estilo para hacerlo más alto
           className="h-20 resize-none"
         />
       </div>
 
 
       <div>
-        <label htmlFor="input-author" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="author" className="block text-sm font-medium text-gray-700 mb-1">
           Author
         </label>
         <Input
-          id="input-author"
-          value={author}
-          onChange={(e) => setAuthor(e.target.value)}
-          // PLACEHOLDER
+          id="author"
+          value={formData.author}
+          onChange={handleChange}
           placeholder="Author (optional)"
         />
       </div>
 
       <div>
-        <label htmlFor="input-image" className="block text-sm font-medium text-gray-700 mb-1">
+        <label htmlFor="image" className="block text-sm font-medium text-gray-700 mb-1">
           Image URL
         </label>
         <Input
-          id="input-image"
-          value={image}
-          onChange={(e) => setImage(e.target.value)}
-          // PLACEHOLDER
+          id="image"
+          value={formData.image}
+          onChange={handleChange}
           placeholder="Image URL (optional)"
         />
       </div>
 
-      <div className="flex justify-end pt-2">
+      <div className="flex justify-end pt-2 space-x-3">
+        {isUpdating && onCancel && (
+            <Button
+              type="button"
+              onClick={onCancel}
+              className="bg-gray-500 text-white hover:bg-gray-600 transition duration-200"
+            >
+              Cancel
+            </Button>
+        )}
         <Button
           type="submit"
-          // Aplicar el estilo de color Success definido: Verde para Añadir
-          className="bg-[#2ECC71] text-white hover:bg-[#27ae60] transition duration-200"
+          className={`${buttonColor} transition duration-200`}
         >
-          
-          Add Phrase
+         {buttonText}
         </Button>
       </div>
     </form>

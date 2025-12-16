@@ -12,7 +12,7 @@ const PhraseList = ({ phrases, onUpdate, onDelete }) => {
         <PhraseCard
           key={p.id}
           phrase={p}
-          onEditClick={(updated) => onUpdate(p.id, updated)}
+          onEditClick={() => onUpdate(p)}
           onDeleteClick={onDelete}
         />
       ))}

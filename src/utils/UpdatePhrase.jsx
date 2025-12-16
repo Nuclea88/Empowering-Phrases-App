@@ -1,3 +1,4 @@
+import React from 'react';
 const updatePhrase = (updatedData, array) =>{
 
     let updatedArray = array.map(phrase =>{
@@ -9,4 +10,4 @@ const updatePhrase = (updatedData, array) =>{
         });
         return updatedArray;
     };
-export {updatePhrase}
+export default updatePhrase;
