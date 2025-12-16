@@ -1,5 +1,4 @@
 // src/components/atoms/Button.jsx
-
 import React from 'react';
 
 // Se debe incluir {...rest} para asegurar que todas las props funcionen
@@ -9,7 +8,7 @@ const Button = ({ children, onClick, type = 'button', className = '', ...rest })
     const baseClasses = 'px-4 py-2 font-semibold rounded transition duration-200';
     
     // 2. Definimos el estilo primario por defecto (azul)
-    const defaultStyle = 'bg-[#007BFF] text-white hover:bg-[#0056b3]';
+    const defaultStyle = 'bg-[#8C5A66] text-white hover:bg-[#734651]';
     
     // 3. CLAVE: Determinamos qué estilo aplicar. 
     // Si className (el estilo verde) existe, usamos className. Si no, usamos el estilo primario por defecto.
