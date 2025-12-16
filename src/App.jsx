@@ -8,12 +8,15 @@ import deletePhrase from './utils/DeletePhrase';
 import updatePhrase from './utils/UpdatePhrase';
 import createPhrase from './utils/CreatePhrase'
 import Button from './components/atoms/Button';
-
+import ButtonNav from './components/atoms/ButtonNav';
 const VIEW_MODE = {
   LIST: 'list',
   CREATE: 'create',
   EDIT: 'edit',
 };
+
+
+
 
 function App() {
   const [phrases, setPhrases] = useState(() => {
@@ -104,9 +107,28 @@ return (
   };
 
   return (
+
     <AppLayout>
-      {renderContent()}
+    //  {renderContent()}
+      {}
+        <header>
+          <nav>
+            <ButtonNav text="Start" home="storagephrase"/>
+            <ButtonNav text="Create your Phrase"/>
+            <ButtonNav text="About Us"/> 
+
+          </nav>
+        </header>
+        
+          <PhraseForm onSubmit={addPhrase} />
+          <PhraseList
+            phrases={phrases}
+            onUpdate={handleUpdatePhrase}
+            onDelete={handleDeletePhrase}
+      
+      />
     </AppLayout>
+
   );
 }
 

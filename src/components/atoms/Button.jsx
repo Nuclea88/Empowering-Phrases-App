@@ -1,5 +1,4 @@
 // src/components/atoms/Button.jsx
-
 import React from 'react';
 
 // Se debe incluir {...rest} para asegurar que todas las props funcionen
