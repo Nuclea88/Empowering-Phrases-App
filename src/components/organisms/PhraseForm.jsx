@@ -1,8 +1,4 @@
-// src/components/organisms/PhraseForm.jsx
-
-// Importar los hooks de React necesarios
 import React, { useState} from 'react';
-// Importar los átomos de la carpeta components
 import Input from '../atoms/Input';
 import Button from '../atoms/Button';
 
@@ -10,7 +6,6 @@ const PhraseForm = ({ initialData, onSubmit, onCancel}) => {
   const defaultState = {id: null, phrase: '', author:'', image: ''};
   const [formData, setFormData] = useState(initialData || defaultState);
 
-  //para la parte de actualizacion pero, como pilla la id?
   const handleChange = (event) => {
     const { id, value } = event.target;
     setFormData(prevData => ({
@@ -18,20 +13,18 @@ const PhraseForm = ({ initialData, onSubmit, onCancel}) => {
       [id]: value
     }));
   };
-  // Manejador del envío del formulario
+
   const handleSubmit = (event) => {
     event.preventDefault();
     onSubmit(formData); 
-    if (!initialData) {
-      setFormData(defaultState);
-    }
   };
-  const isUpdating = !!initialData;
+
+  const isUpdating = (initialData !== null && initialData !== undefined);
   const title = isUpdating ? 'Update Phrase' : 'Add New Phrase';
   const buttonText = isUpdating ? 'Save Changes' : 'Add Phrase';
   const buttonColor = isUpdating 
-    ? 'bg-[#3498db] text-white hover:bg-[#2980b9]' // Azul para actualizar
-    : 'bg-[#2ECC71] text-white hover:bg-[#27ae60]'; // Verde para añadir
+    ? 'bg-[#3498db] text-white hover:bg-[#2980b9]' 
+    : 'bg-[#2ECC71] text-white hover:bg-[#27ae60]'; 
 
   return (
     <form onSubmit={handleSubmit} className="bg-white p-6 rounded-lg shadow-md space-y-4 mb-6">
