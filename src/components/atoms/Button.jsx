@@ -1,5 +1,6 @@
 // src/components/atoms/Button.jsx
 import React from 'react';
+import "./Button.css"
 
 // Se debe incluir {...rest} para asegurar que todas las props funcionen
 const Button = ({ children, onClick, type = 'button', className = '', ...rest }) => {
