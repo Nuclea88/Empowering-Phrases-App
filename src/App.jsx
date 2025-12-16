@@ -39,7 +39,6 @@ function App() {
         phrases={phrases}
         onUpdate={handleUpdatePhrase}
         onDelete={handleDeletePhrase}
-
       />
     </AppLayout>
   );
