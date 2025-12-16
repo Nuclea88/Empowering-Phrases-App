@@ -1,5 +1,3 @@
-// src/components/atoms/Input.jsx
-
 import React from 'react';
 
 const Input = ({ className = '', ...rest }) => {
