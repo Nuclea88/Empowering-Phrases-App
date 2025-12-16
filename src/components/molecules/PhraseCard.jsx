@@ -33,7 +33,7 @@ const PhraseCard = ({ phrase, onEditClick, onDeleteClick }) => {
           Eliminar
         </Button>
         <Button
-          onClick={() => onEditClick(phrase)}
+          onClick={() => onEditClick()}
           className="bg-[#8C5A66] text-white hover:bg-[#734651]">
           Editar
         </Button>
