@@ -5,6 +5,10 @@ import { idGenerator } from './utils/idGenerator';
 import AppLayout from './components/templates/AppLayout';
 import PhraseForm from './components/organisms/PhraseForm';
 import PhraseList from './components/organisms/PhraseList';
+import ButtonNav from './components/atoms/ButtonNav';
+
+
+
 function App() {
   const [phrases, setPhrases] = useState(() => {
     const saved = localStorage.getItem('phrases');
@@ -30,15 +34,27 @@ function App() {
     setPhrases(phrases.filter((p) => p.id !== id));
   };
   return (
+
     <AppLayout>
-      {/* :rotating_light: CONEXIÓN DE PROPS: Usar las funciones internas */}
-      <PhraseForm onSubmit={addPhrase} />
-      <PhraseList
-        phrases={phrases}
-        onUpdate={handleUpdatePhrase}
-        onDelete={handleDeletePhrase}
+      {}
+        <header>
+          <nav>
+            <ButtonNav text="Start" home="storagephrase"/>
+            <ButtonNav text="Create your Phrase"/>
+            <ButtonNav text="About Us"/> 
+
+          </nav>
+        </header>
+        
+          <PhraseForm onSubmit={addPhrase} />
+          <PhraseList
+            phrases={phrases}
+            onUpdate={handleUpdatePhrase}
+            onDelete={handleDeletePhrase}
+      
       />
     </AppLayout>
+
   );
 }
 export default App;
