@@ -9,13 +9,14 @@ import updatePhrase from './utils/UpdatePhrase';
 import createPhrase from './utils/CreatePhrase'
 import Button from './components/atoms/Button';
 import ButtonNav from './components/atoms/ButtonNav';
+
+
+
 const VIEW_MODE = {
   LIST: 'list',
   CREATE: 'create',
   EDIT: 'edit',
 };
-
-
 
 
 function App() {
@@ -99,7 +100,7 @@ return (
 
         <PhraseList
           phrases={phrases}
-          onUpdate={startEditing} // Usamos startEditing para ir al modo EDIT
+          onUpdate={startEditing}
           onDelete={handleDeletePhrase}
         />
       </>
@@ -109,7 +110,7 @@ return (
   return (
 
     <AppLayout>
-    //  {renderContent()}
+    
       {}
         <header>
           <nav>
@@ -119,14 +120,9 @@ return (
 
           </nav>
         </header>
+        {renderContent()}
         
-          <PhraseForm onSubmit={addPhrase} />
-          <PhraseList
-            phrases={phrases}
-            onUpdate={handleUpdatePhrase}
-            onDelete={handleDeletePhrase}
       
-      />
     </AppLayout>
 
   );
