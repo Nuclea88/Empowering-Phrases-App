@@ -3,7 +3,7 @@ import React from 'react';
 const AppLayout = ({ children }) => {
   return (
     <div className="min-h-screen bg-gray-50">
-      <header className="bg-[#007BFF] text-white p-4 shadow">
+      <header className="bg-[#8C5A66] text-white p-4 shadow">
         <h1 className="text-xl font-bold">Empowerment Phrases</h1>
       </header>
 
