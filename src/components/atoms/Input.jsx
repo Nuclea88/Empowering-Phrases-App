@@ -2,7 +2,6 @@ import React from 'react';
 
 const Input = ({ className = '', ...rest }) => {
     
-    // 🚨 AÑADIR CLASE PARA EL COLOR DE TEXTO: text-gray-800
     const baseClasses = 'w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-[#8C5A66] text-gray-800';
     
     const allClasses = `${baseClasses} ${className}`;
