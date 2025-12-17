@@ -1,60 +1,73 @@
-/* CLASES DE COLORES ESPECÍFICOS (Añadir/Eliminar/Editar) */
-
 /* Botón de Añadir (Verde) */
 .btn-add {
-    background-color: #4CAF50; 
+    background-color: #c2ffc4;
     color: white;
 }
+
 .btn-add:hover {
-    background-color: #45A049;
+    background-color: #88fc8e;
 }
 
 /* Botón de Eliminar (Rojo) */
 .btn-delete {
-    background-color: #F44336;
+    background-color: #ffd7d4;
     color: white;
 }
+
 .btn-delete:hover {
-    background-color: #DA190B;
+    background-color: #ffa6a0;
 }
 
 /* Botón de Editar (Azul) */
 .btn-edit {
-    background-color: #2196F3; 
+    background-color: #d2ebff;
     color: white;
 }
+
 .btn-edit:hover {
-    background-color: #0B7CDD;
+    background-color: #8cc6f8;
 }
 
-/* CLASES DE BOTONES SEGÚN TU PALETA (Opcional)          */
+/* CLASES DE BOTONES SEGÚN LA PALETA    */
 
 /* Botón Principal (Acción: Fondo #8C5A66) */
 .btn-primary {
-    background-color: var(--btn-accion-fondo); /* #8C5A66 */
-    color: var(--btn-accion-texto); /* #FFFFFF */
+    background-color: var(--btn-accion-fondo);
+    /* #8C5A66 */
+    color: var(--btn-accion-texto);
+    /* #FFFFFF */
 }
+
 .btn-primary:hover {
-    background-color: var(--btn-accion-hover); /* #734651 */
+    background-color: var(--btn-accion-hover);
+    /* #734651 */
 }
 
 /* Botón Secundario (Explorar: Fondo #E6A8B0) */
 .btn-secondary {
-    background-color: var(--btn-secundario-fondo); /* #E6A8B0 */
-    color: var(--btn-secundario-texto); /* #8C5A66 */
+    background-color: var(--btn-secundario-fondo);
+    /* #E6A8B0 */
+    color: var(--btn-secundario-texto);
+    /* #8C5A66 */
     border: 1px solid var(--btn-secundario-fondo);
 }
+
 .btn-secondary:hover {
-    background-color: var(--btn-secundario-hover); /* #D98C98 */
+    background-color: var(--btn-secundario-hover);
+    /* #D98C98 */
     border: 1px solid var(--btn-secundario-hover);
 }
 
 /* Botón Neutro (Outline) */
 .btn-neutral {
     background-color: transparent;
-    border: 2px solid var(--color-texto-secundario); /* #9C7A83 */
-    color: var(--color-texto-secundario); /* #9C7A83 */
+    border: 2px solid var(--color-texto-secundario);
+    /* #9C7A83 */
+    color: var(--color-texto-secundario);
+    /* #9C7A83 */
 }
+
 .btn-neutral:hover {
-    background-color: var(--color-fondo-caja); /* #F3D9DD */
+    background-color: var(--color-fondo-caja);
+    /* #F3D9DD */
 }
