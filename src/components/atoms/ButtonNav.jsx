@@ -1,6 +1,7 @@
 import "./ButtonNav.css"
 
 
+
 const ButtonNav = ({text}) => {
   return (
     <>
@@ -10,3 +11,7 @@ const ButtonNav = ({text}) => {
 };
 
 export default ButtonNav
+
+
+
+

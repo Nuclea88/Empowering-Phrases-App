@@ -9,6 +9,7 @@ import updatePhrase from './utils/UpdatePhrase';
 import createPhrase from './utils/CreatePhrase'
 import Button from './components/atoms/Button';
 import ButtonNav from './components/atoms/ButtonNav';
+import Navbar from './components/nav/Navbar';
 
 
 
@@ -113,12 +114,7 @@ return (
     
       {}
         <header>
-          <nav>
-            <ButtonNav text="Start" home="storagephrase"/>
-            <ButtonNav text="Create your Phrase"/>
-            <ButtonNav text="About Us"/> 
-
-          </nav>
+            <Navbar/>
         </header>
         {renderContent()}
         
@@ -129,3 +125,4 @@ return (
 }
 
 export default App;
+
