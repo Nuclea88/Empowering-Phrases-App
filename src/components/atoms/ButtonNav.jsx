@@ -1,10 +1,10 @@
+// ButtonNav.jsx
 import "./ButtonNav.css"
-
 
 const ButtonNav = ({text}) => {
   return (
     <>
-    <button>{text}</button>
+      <button className="button-nav">{text}</button>
     </>
   );
 };
