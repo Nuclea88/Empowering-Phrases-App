@@ -1,12 +1,11 @@
-// ButtonNav.jsx
 import "./ButtonNav.css"
 
-const ButtonNav = ({text}) => {
+const ButtonNav = ({ text, onClick }) => {
   return (
-    <>
-      <button className="button-nav">{text}</button>
-    </>
+    <button className="button-nav" onClick={onClick}>
+      {text}
+    </button>
   );
 };
 
-export default ButtonNav
+export default ButtonNav;
