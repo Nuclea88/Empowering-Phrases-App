@@ -1,5 +1,4 @@
 /* src/style.css */
-
 /* ----------------------------------------------------- */
 /* 1. DEFINICIÓN DE VARIABLES DE COLOR (Recomendado)     */
 /* ----------------------------------------------------- */
@@ -10,12 +9,10 @@
     --color-texto-secundario: #9C7A83; /* Texto secundario */
     --color-acento-suave: #E6A8B0; /* Acento suave */
     --color-fondo-caja: #F3D9DD; /* Usado para el hover de Botón neutro */
-
     /* Colores para el Botón Principal (Acción - Fondo: #8C5A66) */
     --btn-accion-fondo: #8C5A66;
     --btn-accion-texto: #FFFFFF;
     --btn-accion-hover: #734651;
-
     /* Colores para el Botón Secundario (Explorar - Fondo: #E6A8B0) */
     --btn-secundario-fondo: #E6A8B0;
     --btn-secundario-texto: #8C5A66;
