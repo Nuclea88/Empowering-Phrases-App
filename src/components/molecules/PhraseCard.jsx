@@ -32,13 +32,13 @@ const PhraseCard = ({ phrase, onEditClick, onDeleteClick }) => {
           onClick={() => onDeleteClick(phrase.id)}
           className="btn-delete"
         >
-          Eliminar
+          Delete
         </Button>
         <Button
           onClick={() => onEditClick()}
           className="btn-edit"
         >
-          Editar
+          Edit
         </Button>
       </div>
     </div>
