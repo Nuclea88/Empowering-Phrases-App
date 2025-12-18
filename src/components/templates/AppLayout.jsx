@@ -2,7 +2,7 @@ import React from 'react';
 
 import { Outlet } from 'react-router';
 import Navbar from '../organisms/Navbar';
-
+import '../atoms/ButtonNav.css';
 
 const AppLayout = ({ children }) => {
   return (

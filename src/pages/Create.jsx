@@ -12,26 +12,18 @@ const Create = () => {
     return saved ? JSON.parse(saved) : phrasesArray;
   });
 
-  const navigate = useNavigate();   // 👈 inicializar
+  const navigate = useNavigate();
 
   useEffect(() => {
     localStorage.setItem("phrases", JSON.stringify(phrases));
   }, [phrases]);
 
-  const handlePhrase = (phraseForForm) => {
-    let newPhrases = [];
-    if (phraseForForm.id) {
-      newPhrases = updatePhrase(phraseForForm, phrases);
-    } else {
-      newPhrases = createPhrase(phraseForForm, phrases);
-    }
+  const handleNewPhrase = (phraseForForm) => {
+    let newPhrases = createPhrase(phraseForForm, phrases);
     setPhrases(newPhrases);
-
-    // 👇 redirigir al Home después de añadir
     navigate("/");
   };
-
-  return <PhraseForm onSubmit={handlePhrase} />;
+  return <PhraseForm onSubmit={handleNewPhrase} />;
 };
 
 export default Create;

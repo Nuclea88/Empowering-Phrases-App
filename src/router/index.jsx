@@ -10,11 +10,11 @@ import AppLayout from "../components/templates/AppLayout";
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <AppLayout />,   // 👈 layout principal
+    element: <AppLayout />,
     children: [
       { index: true, element: <Home /> },
       { path: "create", element: <Create /> },
-      { path: "about-us", element: <AboutUs /> }  // 👈 aquí conectas AboutUs
+      { path: "about-us", element: <AboutUs /> } 
     ]
   }
 ]);
