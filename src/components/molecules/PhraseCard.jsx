@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from '../atoms/Button';
+import "./PhraseCard.css";
 
 const PhraseCard = ({ phrase, onEditClick, onDeleteClick }) => {
   const displayAuthor = phrase.author && phrase.author.trim() !== ''
@@ -7,34 +8,36 @@ const PhraseCard = ({ phrase, onEditClick, onDeleteClick }) => {
     : 'Anónimo';
 
   return (
-    <div className="bg-white p-6 rounded-lg shadow-md mb-4 border border-gray-100">
+    <div className="phrase-card-container">
       {phrase.image && (
         <img
           src={phrase.image}
           alt={phrase.phrase}
-          className="w-full h-40 object-cover mb-2 rounded"
+          className="phrase-card-image"
         />
       )}
 
-      <blockquote className="text-xl italic text-gray-800 mb-4">
+      <blockquote className="phrase-card-quote">
         "{phrase.phrase}"
       </blockquote>
 
-      <footer className="text-right">
-        <cite className="block text-sm text-[#7F8C8D] font-semibold not-italic">
+      <footer className="phrase-card-footer">
+        <cite className="phrase-card-author">
           — {displayAuthor}
         </cite>
       </footer>
 
-      <div className="flex justify-end space-x-2 mt-4 pt-3 border-t border-gray-100">
+      <div className="phrase-card-actions">
         <Button
           onClick={() => onDeleteClick(phrase.id)}
-          className="bg-transparent text-[#E74C3C] hover:bg-red-50">
+          className="btn-delete"
+        >
           Eliminar
         </Button>
         <Button
           onClick={() => onEditClick()}
-          className="bg-[#8C5A66] text-white hover:bg-[#734651]">
+          className="btn-edit"
+        >
           Editar
         </Button>
       </div>
