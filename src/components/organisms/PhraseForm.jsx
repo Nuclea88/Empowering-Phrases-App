@@ -44,7 +44,6 @@ const PhraseForm = ({ initialData, onSubmit, onCancel}) => {
         />
       </div>
 
-
       <div>
         <label htmlFor="author" className="block text-sm font-medium text-gray-700 mb-1">
           Author
