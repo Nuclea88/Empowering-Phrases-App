@@ -4,15 +4,12 @@ const Navbar = () => {
   return (
     <>
 
-        <Link to= "/">Home</Link>
-        <Link to= "/create">Create your Phrase</Link>
-        <Link to= "/about-us">About Us</Link>
+        <button className="button-nav"><Link to= "/">Home</Link></button>
+        <button className="button-nav"><Link to= "/create">Create your Phrase</Link></button>
+        <button className="button-nav"><Link to= "/about-us">About Us</Link></button>
       
     </>
   )
 }
 
 export default Navbar
-
-
-
