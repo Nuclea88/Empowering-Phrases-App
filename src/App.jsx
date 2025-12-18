@@ -9,7 +9,8 @@ import updatePhrase from './utils/UpdatePhrase';
 import createPhrase from './utils/CreatePhrase'
 import Button from './components/atoms/Button';
 import ButtonNav from './components/atoms/ButtonNav';
-import Navbar from './components/nav/Navbar';
+import Navbar from './components/organisms/Navbar';
+
 
 
 
