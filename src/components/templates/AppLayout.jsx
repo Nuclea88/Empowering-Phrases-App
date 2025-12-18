@@ -1,11 +1,9 @@
+// src/components/templates/AppLayout.jsx
 import React from 'react';
 
 const AppLayout = ({ children }) => {
   return (
     <div className="min-h-screen bg-gray-50">
-      <header className="bg-[#8C5A66] text-white p-4 shadow">
-        <h1 className="text-xl font-bold">Empowerment Phrases</h1>
-      </header>
 
       <main className="max-w-4xl mx-auto p-6">
         {children}

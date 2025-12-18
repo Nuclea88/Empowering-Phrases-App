@@ -8,9 +8,7 @@ import deletePhrase from './utils/DeletePhrase';
 import updatePhrase from './utils/UpdatePhrase';
 import createPhrase from './utils/CreatePhrase'
 import Button from './components/atoms/Button';
-import ButtonNav from './components/atoms/ButtonNav';
-
-
+import Navbar from './components/atoms/ButtonNav';
 
 const VIEW_MODE = {
   LIST: 'list',
@@ -18,21 +16,19 @@ const VIEW_MODE = {
   EDIT: 'edit',
 };
 
-
 function App() {
   const [phrases, setPhrases] = useState(() => {
     const saved = localStorage.getItem('phrases');
     return saved ? JSON.parse(saved) : phrasesArray;
   });
-      const [viewMode, setViewMode] = useState(VIEW_MODE.LIST)
-      const [editingPhrase, setEditingPhrase] = useState(null); 
+  const [viewMode, setViewMode] = useState(VIEW_MODE.LIST)
+  const [editingPhrase, setEditingPhrase] = useState(null);
 
   useEffect(() => {
     localStorage.setItem('phrases', JSON.stringify(phrases));
   }, [phrases]);
 
-
-// --- Funciones para manejar la navegación ---
+  // --- Funciones para manejar la navegación ---
   const handleShowCreateForm = () => {
     setEditingPhrase(null);
     setViewMode(VIEW_MODE.CREATE);
@@ -48,17 +44,13 @@ function App() {
     setViewMode(VIEW_MODE.EDIT); // Cambiamos la vista a EDITAR
   };
 
-
-
-
-
-  const handlePhrase = (phraseForForm) =>{
-   let newPhrases = [];
-     if (phraseForForm.id ){
-        newPhrases = updatePhrase(phraseForForm, phrases);
-      } else{
+  const handlePhrase = (phraseForForm) => {
+    let newPhrases = [];
+    if (phraseForForm.id) {
+      newPhrases = updatePhrase(phraseForForm, phrases);
+    } else {
       newPhrases = createPhrase(phraseForForm, phrases);
-      }
+    }
     setPhrases(newPhrases);
     handleShowList();
   }
@@ -68,29 +60,27 @@ function App() {
     setPhrases(newPhrases);
   };
 
+  const renderContent = () => {
 
-
-const renderContent = () => {
-    
     // MODO CREAR o EDITAR: Renderiza el formulario
     if (viewMode === VIEW_MODE.CREATE || viewMode === VIEW_MODE.EDIT) {
-      
+
       // La clave es que en modo CREAR, initialData es null.
       // En modo EDITAR, initialData es editingPhrase (con ID).
       const initialDataForForm = viewMode === VIEW_MODE.EDIT ? editingPhrase : null;
       return (
-        <PhraseForm 
+        <PhraseForm
           // Ya que el componente se monta/desmonta, el estado se reinicializa correctamente
-          initialData={initialDataForForm} 
-          onSubmit={handlePhrase} 
+          initialData={initialDataForForm}
+          onSubmit={handlePhrase}
           onCancel={handleShowList} // Al cancelar, volvemos a la lista
         />
       );
     }
-return (
+    return (
       <>
         <div className="flex justify-end mb-6">
-          <Button 
+          <Button
             onClick={handleShowCreateForm}
             className="bg-blue-500 text-white hover:bg-blue-600 transition duration-200"
           >
@@ -108,23 +98,12 @@ return (
   };
 
   return (
-
-    <AppLayout>
-    
-      {}
-        <header>
-          <nav>
-            <ButtonNav text="Start" home="storagephrase"/>
-            <ButtonNav text="Create your Phrase"/>
-            <ButtonNav text="About Us"/> 
-
-          </nav>
-        </header>
+    <div className="app-wrapper">
+      <Navbar onShowList={handleShowList} onShowCreate={handleShowCreateForm} />
+      <AppLayout>
         {renderContent()}
-        
-      
-    </AppLayout>
-
+      </AppLayout>
+    </div>
   );
 }
 

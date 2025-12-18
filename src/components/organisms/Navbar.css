@@ -1,0 +1,29 @@
+.navbar-full {
+    background-color: #8C5A66;
+    width: 100vw;
+    /* 100% del ancho de la ventana */
+    display: flex;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-content {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    color: white;
+}
+
+.navbar-logo {
+    margin: 0;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.navbar-links {
+    display: flex;
+    gap: 10px;
+}
