@@ -18,17 +18,21 @@
     --btn-secundario-texto: #8C5A66;
     --btn-secundario-hover: #D98C98;
 }
+
 /* ----------------------------------------------------- */
 /* 2. ESTILOS GLOBALES BÁSICOS (Usando las variables)    */
 /* ----------------------------------------------------- */
+
 body {
     background-color: var(--color-fondo-principal);
     color: var(--color-texto-principal);
     font-family: sans-serif; /* O la fuente que elijas */
 }
+
 h1, h2, h3 {
     color: var(--color-texto-principal);
 }
+
 /* Puedes añadir estilos para el fondo de cards o contenedores aquí si es necesario */
 /* .card {
     background-color: white;

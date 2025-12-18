@@ -1,17 +1,11 @@
 import "./ButtonNav.css"
 
-
-
-const ButtonNav = ({text}) => {
+const ButtonNav = ({ text, onClick }) => {
   return (
-    <>
-    <button>{text}</button>
-    </>
+    <button className="button-nav" onClick={onClick}>
+      {text}
+    </button>
   );
 };
 
-export default ButtonNav
-
-
-
-
+export default ButtonNav;
