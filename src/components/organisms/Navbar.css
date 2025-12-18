@@ -1,7 +1,18 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#root {
+    width: 100%;
+    max-width: 100%;
+    padding: 0;
+}
+
 .navbar-full {
     background-color: #8C5A66;
-    width: 100vw;
-    /* 100% del ancho de la ventana */
+    width: 100%;
     display: flex;
     justify-content: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -19,11 +30,48 @@
 
 .navbar-logo {
     margin: 0;
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     font-weight: bold;
+    white-space: nowrap;
 }
 
 .navbar-links {
     display: flex;
-    gap: 10px;
+    gap: 12px;
+}
+
+.button-nav {
+    background-color: #F3D9D9;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.2s;
+}
+
+.button-nav a {
+    text-decoration: none;
+    color: #3D2B2F;
+    font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+    .navbar-content {
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1.5rem 1rem;
+    }
+
+    .navbar-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .button-nav {
+        flex: 1 1 auto;
+        text-align: center;
+        min-width: 100px;
+    }
 }

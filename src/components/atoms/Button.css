@@ -1,73 +1,65 @@
-/* Botón de Añadir (Verde) */
-.btn-add {
-    background-color: #c2ffc4;
-    color: white;
+:root {
+    --btn-edit-bg: #E6A8B0;    
+    --btn-edit-text: #734651;  
+    --btn-delete-bg: #B0A4A7;  
+    --btn-delete-text: #4A4445; 
+    --btn-accion-fondo: #8C5A66;
+    --btn-accion-hover: #734651;
 }
 
-.btn-add:hover {
-    background-color: #88fc8e;
+/* ESTILO BASE PARA TODOS LOS BOTONES  */
+button, .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px; 
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-/* Botón de Eliminar (Rojo) */
-.btn-delete {
-    background-color: #ffd7d4;
-    color: white;
+button:hover, .btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.btn-delete:hover {
-    background-color: #ffa6a0;
-}
-
-/* Botón de Editar (Azul) */
+/* Botón de Editar  */
 .btn-edit {
-    background-color: #d2ebff;
-    color: white;
+    background-color: var(--btn-edit-bg);
+    color: var(--btn-edit-text);
 }
 
 .btn-edit:hover {
-    background-color: #8cc6f8;
+    background-color: #D98C98; 
 }
 
-/* CLASES DE BOTONES SEGÚN LA PALETA    */
+/* Botón de Eliminar  */
+.btn-delete {
+    background-color: var(--btn-delete-bg);
+    color: var(--btn-delete-text);
+}
 
-/* Botón Principal (Acción: Fondo #8C5A66) */
+.btn-delete:hover {
+    background-color: #9C8F92;
+}
+
 .btn-primary {
     background-color: var(--btn-accion-fondo);
-    /* #8C5A66 */
-    color: var(--btn-accion-texto);
-    /* #FFFFFF */
+    color: #FFFFFF;
 }
 
 .btn-primary:hover {
     background-color: var(--btn-accion-hover);
-    /* #734651 */
 }
 
-/* Botón Secundario (Explorar: Fondo #E6A8B0) */
-.btn-secondary {
-    background-color: var(--btn-secundario-fondo);
-    /* #E6A8B0 */
-    color: var(--btn-secundario-texto);
-    /* #8C5A66 */
-    border: 1px solid var(--btn-secundario-fondo);
+.btn-add {
+    background-color: var(--btn-edit-bg);
+    color: var(--btn-edit-text); 
 }
 
-.btn-secondary:hover {
-    background-color: var(--btn-secundario-hover);
-    /* #D98C98 */
-    border: 1px solid var(--btn-secundario-hover);
-}
-
-/* Botón Neutro (Outline) */
-.btn-neutral {
-    background-color: transparent;
-    border: 2px solid var(--color-texto-secundario);
-    /* #9C7A83 */
-    color: var(--color-texto-secundario);
-    /* #9C7A83 */
-}
-
-.btn-neutral:hover {
-    background-color: var(--color-fondo-caja);
-    /* #F3D9DD */
+.btn-add:hover {
+    background-color: var(--btn-accion-hover);
 }
