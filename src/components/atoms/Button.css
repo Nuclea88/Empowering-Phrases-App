@@ -1,0 +1,65 @@
+:root {
+    --btn-edit-bg: #E6A8B0;    
+    --btn-edit-text: #734651;  
+    --btn-delete-bg: #B0A4A7;  
+    --btn-delete-text: #4A4445; 
+    --btn-accion-fondo: #8C5A66;
+    --btn-accion-hover: #734651;
+}
+
+/* ESTILO BASE PARA TODOS LOS BOTONES  */
+button, .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.2rem;
+    border-radius: 50px; 
+    font-size: 0.85rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+button:hover, .btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Botón de Editar  */
+.btn-edit {
+    background-color: var(--btn-edit-bg);
+    color: var(--btn-edit-text);
+}
+
+.btn-edit:hover {
+    background-color: #D98C98; 
+}
+
+/* Botón de Eliminar  */
+.btn-delete {
+    background-color: var(--btn-delete-bg);
+    color: var(--btn-delete-text);
+}
+
+.btn-delete:hover {
+    background-color: #9C8F92;
+}
+
+.btn-primary {
+    background-color: var(--btn-accion-fondo);
+    color: #FFFFFF;
+}
+
+.btn-primary:hover {
+    background-color: var(--btn-accion-hover);
+}
+
+.btn-add {
+    background-color: var(--btn-edit-bg);
+    color: var(--btn-edit-text); 
+}
+
+.btn-add:hover {
+    background-color: var(--btn-accion-hover);
+}

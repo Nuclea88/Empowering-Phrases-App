@@ -1,0 +1,16 @@
+.button-nav {
+    background-color: #F3D9DD;
+    color: black;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 0 5px;
+    transition: background-color 0.3s ease;
+}
+
+.button-nav:hover {
+    background-color: rgb(223, 204, 204);
+    /* Un poco más claro al pasar el ratón */
+}

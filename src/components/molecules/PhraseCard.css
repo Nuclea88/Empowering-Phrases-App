@@ -1,0 +1,55 @@
+:root {
+    --primary-color: #8C5A66;
+    --border-light: #E5E7EB;
+    --shadow-soft: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.phrase-card-container {
+    background-color: #ffffff;
+    border: 1px solid var(--border-light);
+    border-radius: 1.5rem;
+    /* Bordes redondeados pronunciados */
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    box-shadow: var(--shadow-soft);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.phrase-card-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+.phrase-card-image {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    /* La imagen también se redondea */
+    margin-bottom: 1rem;
+    object-fit: cover;
+}
+
+.phrase-card-quote {
+    font-size: 1.25rem;
+    color: #1F2937;
+    font-style: italic;
+    margin-bottom: 1rem;
+    text-align: center;
+    /* Centrado para que coincida con la estética de frases */
+}
+
+.phrase-card-author {
+    display: block;
+    text-align: center;
+    color: #6B7280;
+    font-size: 0.875rem;
+    margin-bottom: 1.5rem;
+}
+
+.phrase-card-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 0.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid #F3F4F6;
+}
