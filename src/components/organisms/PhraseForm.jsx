@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 const PhraseForm = ({ initialData, onSubmit, onCancel }) => {
-  // 1. Inicializamos el estado con initialData directamente para evitar el useEffect
   const [formData, setFormData] = useState(initialData || {
     phrase: '',
     author: '',
@@ -17,10 +16,18 @@ const PhraseForm = ({ initialData, onSubmit, onCancel }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    
+    // Validación para evitar enviar solo espacios en blanco (Test 3)
+    if (!formData.phrase.trim()) return;
+
     onSubmit(formData);
+
+    // Limpiar formulario si no es edición (Test 2)
+    if (!initialData) {
+      setFormData({ phrase: '', author: '', image: '' });
+    }
   };
 
-  // 2. Clases de Tailwind para que el texto esté centrado vertical y horizontalmente
   const inputClasses = "w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[#8C5A66] text-center placeholder:text-center resize-none bg-gray-50 flex items-center justify-center";
 
   return (
@@ -30,22 +37,23 @@ const PhraseForm = ({ initialData, onSubmit, onCancel }) => {
       </h2>
       
       <form onSubmit={handleSubmit} className="space-y-4">
-        {/* Campo de Frase */}
         <div>
-          <label className="block text-sm font-bold text-[#8C5A66] mb-1">Empowerment Phrase</label>
+          <label htmlFor="phrase" className="block text-sm font-bold text-[#8C5A66] mb-1">Empowerment Phrase</label>
           <textarea
+            id="phrase"
             name="phrase"
             value={formData.phrase}
             onChange={handleChange}
             placeholder="Write a phrase here..."
-            className={`${inputClasses} h-28 leading-normal py-8`} // Ajustamos el padding-top para centrar en textarea
+            className={`${inputClasses} h-28 leading-normal py-8`}
             required
           />
         </div>
 
         <div>
-          <label className="block text-sm font-bold text-[#8C5A66] mb-1">Author</label>
+          <label htmlFor="author" className="block text-sm font-bold text-[#8C5A66] mb-1">Author</label>
           <input
+            id="author"
             type="text"
             name="author"
             value={formData.author}
@@ -56,8 +64,9 @@ const PhraseForm = ({ initialData, onSubmit, onCancel }) => {
         </div>
 
         <div>
-          <label className="block text-sm font-bold text-[#8C5A66] mb-1">Image URL</label>
+          <label htmlFor="image" className="block text-sm font-bold text-[#8C5A66] mb-1">Image URL</label>
           <input
+            id="image"
             type="text"
             name="image"
             value={formData.image}
