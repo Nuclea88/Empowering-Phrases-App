@@ -1,40 +1,27 @@
-/* src/style.css */
-/* ----------------------------------------------------- */
-/* 1. DEFINICIÓN DE VARIABLES DE COLOR (Recomendado)     */
-/* ----------------------------------------------------- */
+@import "tailwindcss";
+
 :root {
-    /* Colores base (Blush) */
-    --color-fondo-principal: #FBEFEF; /* Fondo principal (blush) */
-    --color-texto-principal: #8C5A66; /* Texto principal (empoderador) */
-    --color-texto-secundario: #9C7A83; /* Texto secundario */
-    --color-acento-suave: #E6A8B0; /* Acento suave */
-    --color-fondo-caja: #F3D9DD; /* Usado para el hover de Botón neutro */
-    /* Colores para el Botón Principal (Acción - Fondo: #8C5A66) */
+    --color-fondo-principal: #FBEFEF;
+    --color-texto-principal: #8C5A66;
+    --color-texto-secundario: #9C7A83;
+    --color-acento-suave: #E6A8B0;
+    --color-fondo-caja: #F3D9DD;
     --btn-accion-fondo: #8C5A66;
     --btn-accion-texto: #FFFFFF;
     --btn-accion-hover: #734651;
-    /* Colores para el Botón Secundario (Explorar - Fondo: #E6A8B0) */
     --btn-secundario-fondo: #E6A8B0;
     --btn-secundario-texto: #8C5A66;
     --btn-secundario-hover: #D98C98;
 }
 
-/* ----------------------------------------------------- */
-/* 2. ESTILOS GLOBALES BÁSICOS (Usando las variables)    */
-/* ----------------------------------------------------- */
-
 body {
     background-color: var(--color-fondo-principal);
     color: var(--color-texto-principal);
-    font-family: sans-serif; /* O la fuente que elijas */
+    font-family: sans-serif;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     color: var(--color-texto-principal);
 }
-
-/* Puedes añadir estilos para el fondo de cards o contenedores aquí si es necesario */
-/* .card {
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(140, 90, 102, 0.1);
-} */

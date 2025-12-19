@@ -11,18 +11,15 @@
     /* Asegura que el padding no afecte al ancho total */
 }
 
-/* Estado Focus - Usando el color de identidad corporativa */
 .custom-input:focus {
     border-color: #8C5A66;
     box-shadow: 0 0 0 2px rgba(140, 90, 102, 0.2);
 }
 
-/* Estilo para el placeholder */
 .custom-input::placeholder {
     color: #9CA3AF;
 }
 
-/* Estado cuando el input está deshabilitado */
 .custom-input:disabled {
     background-color: #F3F4F6;
     cursor: not-allowed;

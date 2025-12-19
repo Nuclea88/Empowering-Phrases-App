@@ -18,26 +18,26 @@ const Home = () => {
     const saved = localStorage.getItem('phrases');
     return saved ? JSON.parse(saved) : phrasesArray;
   });
-      const [viewMode, setViewMode] = useState(VIEW_MODE.LIST)
-      const [editingPhrase, setEditingPhrase] = useState(null);
+  const [viewMode, setViewMode] = useState(VIEW_MODE.LIST)
+  const [editingPhrase, setEditingPhrase] = useState(null);
   useEffect(() => {
     localStorage.setItem('phrases', JSON.stringify(phrases));
   }, [phrases]);
   const handleShowList = () => {
-   setEditingPhrase(null); // Limpiamos la frase de edición
-  setViewMode(VIEW_MODE.LIST);
+    setEditingPhrase(null); // Limpiamos la frase de edición
+    setViewMode(VIEW_MODE.LIST);
   };
   const startEditing = (phrase) => {
-   setEditingPhrase(phrase); // Cargamos la frase
+    setEditingPhrase(phrase); // Cargamos la frase
     setViewMode(VIEW_MODE.EDIT); // Cambiamos la vista a EDITAR
   };
-  const handlePhrase = (phraseForForm) =>{
-   let newPhrases = [];
-     if (phraseForForm.id ){
-        newPhrases = updatePhrase(phraseForForm, phrases);
-      } else{
+  const handlePhrase = (phraseForForm) => {
+    let newPhrases = [];
+    if (phraseForForm.id) {
+      newPhrases = updatePhrase(phraseForForm, phrases);
+    } else {
       newPhrases = createPhrase(phraseForForm, phrases);
-      }
+    }
     setPhrases(newPhrases);
     handleShowList();
   }
@@ -45,7 +45,7 @@ const Home = () => {
     const newPhrases = deletePhrase(id, phrases);
     setPhrases(newPhrases);
   };
-const renderContent = () => {
+  const renderContent = () => {
     // MODO CREAR o EDITAR: Renderiza el formulario
     if (viewMode === VIEW_MODE.CREATE || viewMode === VIEW_MODE.EDIT) {
       // La clave es que en modo CREAR, initialData es null.
@@ -72,10 +72,10 @@ const renderContent = () => {
   };
   return (
     <>
-          {renderContent()}
+      {renderContent()}
     </>
-    );
-  };
+  );
+};
 export default Home
 
 

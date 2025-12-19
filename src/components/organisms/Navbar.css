@@ -6,13 +6,13 @@
 
 #root {
     width: 100%;
+    max-width: 100%;
+    padding: 0;
 }
 
-/* --- ESTRUCTURA DEL NAVBAR --- */
 .navbar-full {
     background-color: #8C5A66;
     width: 100%;
-    /* Usamos 100% para evitar scroll horizontal */
     display: flex;
     justify-content: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -25,13 +25,14 @@
     justify-content: space-between;
     align-items: center;
     padding: 1rem 2rem;
+    color: white;
 }
 
 .navbar-logo {
-    color: white;
     margin: 0;
     font-size: 1.5rem;
     font-weight: bold;
+    white-space: nowrap;
 }
 
 .navbar-links {
@@ -40,31 +41,25 @@
 }
 
 .button-nav {
-    background-color: #F2D7D9;
+    background-color: #F3D9D9;
     border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
+    padding: 10px 18px;
+    border-radius: 8px;
     cursor: pointer;
-    white-space: nowrap;
-    transition: background-color 0.2s, transform 0.1s;
-}
-
-.button-nav:hover {
-    background-color: rgb(223, 204, 204);
-    transform: translateY(-1px);
+    font-weight: bold;
+    transition: background-color 0.2s;
 }
 
 .button-nav a {
     text-decoration: none;
-    color: #333;
-    display: block;
+    color: #3D2B2F;
+    font-size: 0.9rem;
 }
 
 @media (max-width: 768px) {
     .navbar-content {
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem;
         padding: 1.5rem 1rem;
     }
 
@@ -72,30 +67,11 @@
         width: 100%;
         justify-content: center;
         flex-wrap: wrap;
-        /* Si no caben, bajan a la siguiente línea */
     }
 
     .button-nav {
-        padding: 8px 15px;
-        font-size: 0.9rem;
         flex: 1 1 auto;
-        /* Los botones crecen para llenar el espacio */
-        max-width: 150px;
         text-align: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .navbar-logo {
-        font-size: 1.2rem;
-    }
-
-    .navbar-links {
-        flex-direction: column;
-        width: 100%;
-    }
-
-    .button-nav {
-        max-width: 100%;
+        min-width: 100px;
     }
 }
