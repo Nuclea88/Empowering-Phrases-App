@@ -8,7 +8,6 @@
     background-color: #ffffff;
     border: 1px solid var(--border-light);
     border-radius: 1.5rem;
-    /* Bordes redondeados pronunciados */
     padding: 1.5rem;
     margin-bottom: 1rem;
     box-shadow: var(--shadow-soft);
@@ -24,7 +23,6 @@
     width: 100%;
     height: auto;
     border-radius: 1rem;
-    /* La imagen también se redondea */
     margin-bottom: 1rem;
     object-fit: cover;
 }
@@ -35,7 +33,6 @@
     font-style: italic;
     margin-bottom: 1rem;
     text-align: center;
-    /* Centrado para que coincida con la estética de frases */
 }
 
 .phrase-card-author {

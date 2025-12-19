@@ -1,6 +1,3 @@
-
-
-
 import { createBrowserRouter } from "react-router";
 import Home from "../pages/Home";
 import AboutUs from "../pages/AboutUs";
@@ -10,7 +7,7 @@ import AppLayout from "../components/templates/AppLayout";
 export const router = createBrowserRouter([
   {
     path: "/",
-    element: <AppLayout />,
+    element: <AppLayout />,  
     children: [
       { index: true, element: <Home /> },
       { path: "create", element: <Create /> },
@@ -18,12 +15,3 @@ export const router = createBrowserRouter([
     ]
   }
 ]);
-
-
-
-
-
-
-
-
-  
