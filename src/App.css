@@ -24,7 +24,6 @@
     gap: 1rem;
 }
 
-/* Botones dentro del Navbar */
 .button-nav {
     background-color: #ffffff;
     color: #8C5A66;
@@ -41,17 +40,12 @@
     transform: scale(1.05);
 }
 
-/* --- 1. CONTENEDOR DE LAS 2 COLUMNAS --- */
 .cards-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* 2 columnas */
     gap: 2rem;
-    /* Espacio entre tarjetas */
     max-width: 1000px;
-    /* Ancho total centrado */
     margin: 2rem auto;
-    /* Centra el bloque entero */
     padding: 0 1rem;
 }
 
@@ -61,10 +55,8 @@
     border-radius: 1.5rem;
     padding: 2rem;
     width: 100%;
-    /* Ocupa su espacio en la columna */
     max-width: 450px;
     margin: 0 auto;
-    /* Centra la tarjeta en su columna */
     box-shadow: var(--shadow-soft);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -102,7 +94,6 @@
 @media (max-width: 768px) {
     .cards-grid {
         grid-template-columns: 1fr;
-        /* 1 columna en móvil */
     }
 
     .navbar-content {
@@ -121,12 +112,9 @@
     background-color: #ffffff;
     border: 1px solid var(--border-light);
     border-radius: 1.5rem;
-    /* Mismo redondeado que las cards */
     padding: 2.5rem;
     max-width: 600px;
-    /* Ancho controlado para que no se estire */
     margin: 3rem auto;
-    /* Centrado horizontal y espacio arriba/abajo */
     box-shadow: var(--shadow-soft);
 }
 

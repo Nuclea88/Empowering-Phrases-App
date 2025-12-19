@@ -8,11 +8,9 @@
     width: 100%;
 }
 
-/* --- ESTRUCTURA DEL NAVBAR --- */
 .navbar-full {
     background-color: #8C5A66;
     width: 100%;
-    /* Usamos 100% para evitar scroll horizontal */
     display: flex;
     justify-content: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -72,14 +70,12 @@
         width: 100%;
         justify-content: center;
         flex-wrap: wrap;
-        /* Si no caben, bajan a la siguiente línea */
     }
 
     .button-nav {
         padding: 8px 15px;
         font-size: 0.9rem;
         flex: 1 1 auto;
-        /* Los botones crecen para llenar el espacio */
         max-width: 150px;
         text-align: center;
     }

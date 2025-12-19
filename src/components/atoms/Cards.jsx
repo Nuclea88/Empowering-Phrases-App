@@ -1,7 +1,6 @@
 import React, { useState } from 'react'
 
 const Cards = () => {
-  // 1. Mantenemos tus 'cards' (plural)
   const [cards] = useState([
     {
       id: 1,

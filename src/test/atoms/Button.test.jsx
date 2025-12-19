@@ -6,30 +6,25 @@ import React from 'react';
 describe('Button', () => {
 
   afterEach(() => {
-    cleanup(); // Limpia el DOM entre tests
+    cleanup();
   });
 
-  // Test 1: Renderizado y contenido básico
   test('should render the button with the correct children text', () => {
     render(<Button>Submit Form</Button>);
     const buttonElement = screen.getByText(/Submit Form/i);
     expect(buttonElement).toBeInTheDocument();
   });
 
-  // Test 2: Aplicación del estilo por defecto
   test('should apply default primary style when no className is provided', () => {
     render(<Button>Default</Button>);
     const buttonElement = screen.getByText(/Default/i);
 
-    // Clases base
     expect(buttonElement).toHaveClass('px-4', 'py-2', 'font-semibold');
 
-    // Clases de color por defecto (según la lógica del componente reparado)
     expect(buttonElement).toHaveClass('bg-[#8C5A66]');
     expect(buttonElement).toHaveClass('text-white');
   });
 
-  // Test 3: Sobrescribir estilos
   test('should apply custom classes and ignore default style when className is provided', () => {
     const customClass = 'bg-[#2ECC71] text-black';
 
@@ -41,7 +36,6 @@ describe('Button', () => {
     expect(buttonElement).not.toHaveClass('bg-[#8C5A66]');
   });
 
-  // Test 4: Evento click
   test('should call onClick handler when the button is clicked', () => {
     const handleClick = vi.fn();
     render(<Button onClick={handleClick}>Clickable</Button>);
@@ -50,7 +44,6 @@ describe('Button', () => {
     expect(handleClick).toHaveBeenCalledTimes(1);
   });
 
-  // Test 5: Atributo Type
   test('should have type="button" by default and respect custom type', () => {
     const { rerender } = render(<Button>Type Test</Button>);
     expect(screen.getByText(/Type Test/i)).toHaveAttribute('type', 'button');
@@ -58,7 +51,6 @@ describe('Button', () => {
     expect(screen.getByText(/Type Test/i)).toHaveAttribute('type', 'submit');
   });
 
-  // Test 6: Props adicionales
   test('should pass through additional props like data-testid', () => {
     render(<Button data-testid="test-button">Data Prop</Button>);
     expect(screen.getByTestId('test-button')).toBeInTheDocument();

@@ -43,7 +43,6 @@ describe('PhraseForm', () => {
             image: '' 
         });
 
-        // Verificamos el reset
         expect(phraseInput.value).toBe('');
         expect(authorInput.value).toBe('');
     });
@@ -59,4 +58,3 @@ describe('PhraseForm', () => {
         expect(mockOnSubmit).not.toHaveBeenCalled();
     });
 });
-// final del test

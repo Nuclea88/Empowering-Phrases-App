@@ -24,12 +24,12 @@ const Home = () => {
     localStorage.setItem('phrases', JSON.stringify(phrases));
   }, [phrases]);
   const handleShowList = () => {
-    setEditingPhrase(null); // Limpiamos la frase de edición
+    setEditingPhrase(null); 
     setViewMode(VIEW_MODE.LIST);
   };
   const startEditing = (phrase) => {
-    setEditingPhrase(phrase); // Cargamos la frase
-    setViewMode(VIEW_MODE.EDIT); // Cambiamos la vista a EDITAR
+    setEditingPhrase(phrase); 
+    setViewMode(VIEW_MODE.EDIT); 
   };
   const handlePhrase = (phraseForForm) => {
     let newPhrases = [];
@@ -46,17 +46,13 @@ const Home = () => {
     setPhrases(newPhrases);
   };
   const renderContent = () => {
-    // MODO CREAR o EDITAR: Renderiza el formulario
     if (viewMode === VIEW_MODE.CREATE || viewMode === VIEW_MODE.EDIT) {
-      // La clave es que en modo CREAR, initialData es null.
-      // En modo EDITAR, initialData es editingPhrase (con ID).
       const initialDataForForm = viewMode === VIEW_MODE.EDIT ? editingPhrase : null;
       return (
         <PhraseForm
-          // Ya que el componente se monta/desmonta, el estado se reinicializa correctamente
           initialData={initialDataForForm}
           onSubmit={handlePhrase}
-          onCancel={handleShowList} // Al cancelar, volvemos a la lista
+          onCancel={handleShowList}
         />
       );
     }

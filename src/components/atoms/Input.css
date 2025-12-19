@@ -8,7 +8,6 @@
     outline: none;
     transition: all 0.2s ease-in-out;
     box-sizing: border-box;
-    /* Asegura que el padding no afecte al ancho total */
 }
 
 .custom-input:focus {

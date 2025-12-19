@@ -1,6 +1,6 @@
 
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router";   // 👈 importar
+import { useNavigate } from "react-router";
 import PhraseForm from "../components/organisms/PhraseForm";
 import phrasesArray from "../data/PhrasesArray";
 import updatePhrase from "../utils/UpdatePhrase";
@@ -12,7 +12,7 @@ const Create = () => {
     return saved ? JSON.parse(saved) : phrasesArray;
   });
 
-  const navigate = useNavigate();   // 👈 inicializar
+  const navigate = useNavigate();
 
   useEffect(() => {
     localStorage.setItem("phrases", JSON.stringify(phrases));
@@ -27,7 +27,6 @@ const Create = () => {
     }
     setPhrases(newPhrases);
 
-    // 👇 redirigir al Home después de añadir
     navigate("/");
   };
 

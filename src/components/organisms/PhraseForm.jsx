@@ -17,12 +17,10 @@ const PhraseForm = ({ initialData, onSubmit, onCancel }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Validación para evitar enviar solo espacios en blanco (Test 3)
     if (!formData.phrase.trim()) return;
 
     onSubmit(formData);
 
-    // Limpiar formulario si no es edición (Test 2)
     if (!initialData) {
       setFormData({ phrase: '', author: '', image: '' });
     }

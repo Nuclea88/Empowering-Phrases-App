@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    // flex-col para que el logo y los links se apilen en móvil
     <nav className="flex flex-col md:flex-row items-center justify-between w-full gap-4">
       <div className="navbar-brand">
         <h1 className="text-xl font-bold">Empowerment Phrases</h1>

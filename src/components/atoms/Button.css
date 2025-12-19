@@ -7,7 +7,6 @@
     --btn-accion-hover: #734651;
 }
 
-/* ESTILO BASE PARA TODOS LOS BOTONES  */
 button, .btn {
     display: inline-flex;
     align-items: center;
@@ -26,7 +25,6 @@ button:hover, .btn:hover {
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Botón de Editar  */
 .btn-edit {
     background-color: var(--btn-edit-bg);
     color: var(--btn-edit-text);
@@ -36,7 +34,6 @@ button:hover, .btn:hover {
     background-color: #D98C98; 
 }
 
-/* Botón de Eliminar  */
 .btn-delete {
     background-color: var(--btn-delete-bg);
     color: var(--btn-delete-text);

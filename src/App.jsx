@@ -29,7 +29,6 @@ function App() {
     localStorage.setItem('phrases', JSON.stringify(phrases));
   }, [phrases]);
 
-  // Lógica de Datos
   const handlePhrase = (phraseForForm) => {
     let newPhrases = phraseForForm.id
       ? updatePhrase(phraseForForm, phrases)
@@ -37,7 +36,7 @@ function App() {
 
     setPhrases(newPhrases);
     setEditingPhrase(null);
-    navigate('/'); // Volver a la lista automáticamente
+    navigate('/'); 
   };
 
   const handleDeletePhrase = (id) => {
@@ -46,7 +45,7 @@ function App() {
 
   const startEditing = (phrase) => {
     setEditingPhrase(phrase);
-    navigate('/create'); // Vamos al formulario
+    navigate('/create'); 
   };
 
   return (
