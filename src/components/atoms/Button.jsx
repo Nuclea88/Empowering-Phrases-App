@@ -1,26 +1,25 @@
 import React from 'react';
 import "./Button.css"
 
-// Se debe incluir {...rest} para asegurar que todas las props funcionen
 const Button = ({ children, onClick, type = 'button', className = '', ...rest }) => {
     
-    // 1. Definimos las clases base manteniendo solo el estilo estructural y de transición
+    // 1. Clases base (estructura)
     const baseClasses = 'px-4 py-2 font-semibold rounded transition duration-200';
     
-    // 2. Eliminamos el defaultStyle para que el color sea OBLIGATORIO por className.
-    // Si className no existe, el botón tendrá un aspecto muy simple, sin color.
-        // 3. CLAVE: Determinamos qué estilo aplicar. 
-    const specificStyle = className;
+    // 2. Lógica de estilos: 
+    const defaultStyle = 'bg-[#8C5A66] text-white hover:bg-[#734651]';
+    
+    // Si className está vacío, usamos el default. Si no, usamos el className proporcionado.
+    const finalStyle = className.trim() === '' ? defaultStyle : className;
 
-    // 4. Combinamos las clases base con el estilo final
-    const allClasses = `${baseClasses} ${specificStyle}`;
+    const allClasses = `${baseClasses} ${finalStyle}`;
 
     return (
         <button
             type={type}
             onClick={onClick}
             className={allClasses}
-            {...rest} // Siempre pasa las props restantes
+            {...rest}
         >
             {children}
         </button>
